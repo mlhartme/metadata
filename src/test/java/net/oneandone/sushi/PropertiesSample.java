@@ -28,7 +28,7 @@ import java.io.IOException;
  * "Config" instances to and from a property file.
  */
 public class PropertiesSample {
-    private static final World world = new World();
+    private static final World world = World.createMinimal();
 
     /** Serialize object to xml and load the result back into an object */
     public static void main(String[] args) throws IOException {

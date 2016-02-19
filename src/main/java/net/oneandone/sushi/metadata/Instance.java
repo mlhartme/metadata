@@ -60,7 +60,7 @@ public class Instance<T> {
         StringWriter tmp;
         World world;
         
-        world = new World(); // TODO
+        world = World.createMinimal(); // TODO
         type = getType();
         tmp = new StringWriter();
         try {
@@ -103,7 +103,7 @@ public class Instance<T> {
     }
 
     public void toXml(Node dest) throws IOException {
-        try (NodeWriter writer = dest.createWriter()) {
+        try (NodeWriter writer = dest.newWriter()) {
             writer.write("<?xml version='1.0' encoding='");
             writer.write(writer.getEncoding());
             writer.write("'?>\n");

@@ -15,8 +15,8 @@
  */
 package net.oneandone.sushi.csv;
 
-import net.oneandone.sushi.fs.LineFormat;
-import net.oneandone.sushi.fs.LineReader;
+import net.oneandone.sushi.io.LineFormat;
+import net.oneandone.sushi.io.LineReader;
 import net.oneandone.sushi.fs.Node;
 
 import java.io.IOException;
@@ -34,7 +34,7 @@ public class Csv implements Iterable<Line> {
         Csv csv;
         String line;
 
-        try (Reader orig = node.createReader();
+        try (Reader orig = node.newReader();
              LineReader src = new LineReader(orig, new LineFormat(LineFormat.GENERIC_SEPARATOR, LineFormat.Trim.SEPARATOR))) {
             csv = new Csv(format);
             msg = new StringBuilder();
@@ -111,7 +111,7 @@ public class Csv implements Iterable<Line> {
 
 
     public void write(Node file) throws IOException {
-        try (Writer dest = file.createWriter()) {
+        try (Writer dest = file.newWriter()) {
             write(dest);
         }
     }

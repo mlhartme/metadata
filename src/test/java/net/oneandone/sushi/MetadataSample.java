@@ -21,7 +21,7 @@ import net.oneandone.sushi.metadata.Type;
 import net.oneandone.sushi.metadata.reflect.ReflectSchema;
 
 public class MetadataSample {
-    private static final World WORLD = new World();
+    private static final World WORLD = World.createMinimal();
     /** Serialize object to xml and load the result back into an object */
     public static void main(String[] args) throws Exception {
         Instance<Obj> instance;

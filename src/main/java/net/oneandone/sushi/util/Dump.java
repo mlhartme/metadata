@@ -43,7 +43,7 @@ public class Dump {
         
         dest = new StringWriter();
         try {
-            dump(new World(), obj, dest, maxDepth);
+            dump(World.create() /* TODO */, obj, dest, maxDepth);
         } catch (IOException e) {
             throw new RuntimeException("unexected world exception from StringWriter: " + e.getMessage(), e);
         }
@@ -55,7 +55,7 @@ public class Dump {
     }
     
     public static void dump(Object obj, Node dest, int maxDepth) throws IOException {
-        try (Writer writer = dest.createWriter()) {
+        try (Writer writer = dest.newWriter()) {
             dump(dest.getWorld(), obj, writer, maxDepth);
         }
     }

@@ -26,7 +26,7 @@ import net.oneandone.sushi.metadata.reflect.ReflectSchema;
 import java.util.Arrays;
 
 public class CsvSample {
-    private static final World WORLD = new World();
+    private static final World WORLD = World.createMinimal();
     private static final Type TYPE = new ReflectSchema(WORLD).type(All.class);
     
     /** Serialize object to xml and load the result back into an object */
