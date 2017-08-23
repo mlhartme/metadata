@@ -14,7 +14,7 @@
 
   <groupId>net.oneandone</groupId>
   <artifactId>metadata</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <developers>
@@ -35,7 +35,7 @@
     <connection>scm:git:ssh://git@github.com/mlhartme/metadata.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/mlhartme/metadata.git</developerConnection>
     <url>https://github.com/mlhartme/metadata</url>
-    <tag>HEAD</tag>
+    <tag>metadata-1.0.0</tag>
   </scm>
 
   <issueManagement>
